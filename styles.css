@@ -4,7 +4,6 @@ body {
     font-family: 'Arial', sans-serif;
     background: url('images/GitHub-headpic.webp') no-repeat center center fixed;
     background-size: cover;
-    background-color: rgba(0, 0, 0, 0.5); /* Reduced opacity of background image */
     color: #fff;
     display: flex;
     justify-content: center;
@@ -13,6 +12,22 @@ body {
     overflow: hidden;
     flex-direction: column; /* Align content in a column */
 }
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: -1; /* Place it behind the content */
+}
+
+h1, p {
+    z-index: 1; /* Make sure the text stays on top */
+}
+
 
 /* Title in the Background Area */
 h1 {
