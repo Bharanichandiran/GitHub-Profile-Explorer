@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    padding: 30px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 36px;
+    letter-spacing: 1px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+input {
+    padding: 15px;
+    width: 60%;
+    border: 2px solid #007BFF;
+    border-radius: 30px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 91, 179, 0.6);
+}
+
+.search-btn {
+    padding: 15px 25px;
+    margin-left: 15px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.search-btn:active {
+    transform: scale(0.98);
+}
+
+.profile-section, .repo-section, .commits-section {
+    margin-top: 40px;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.profile-info img {
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-info p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.repo-section ul, .commits-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.repo-section li, .commits-section li {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #333;
+}
+
+.repo-section h2, .commits-section h2 {
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.error {
+    color: #e74c3c;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
