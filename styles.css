@@ -1,3 +1,7 @@
+/* Add Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Droid+Serif&display=swap');
+
 /* Reset and Base Styles */
 body {
     margin: 0;
@@ -9,7 +13,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
     flex-direction: column; /* Align content in a column */
 }
 
@@ -50,8 +53,10 @@ h1 {
     text-align: center;
     width: 90%;
     max-width: 600px;
-    margin-top: 30px; /* Add margin to space the card from the title */
+    margin-top: 10px; /* Add margin to space the card from the title */
     transition: all 0.3s ease; /* Smooth transition */
+  
+   
 }
 
 .container:hover {
@@ -200,4 +205,77 @@ h1 {
     h1 {
         font-size: 2rem;
     }
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('images/GitHub-headpic.webp') center/cover no-repeat; /* Page background image */
+    font-family: 'Poppins', sans-serif; /* New font family */
+    color: white; /* Default text color */
+}
+#profileData{
+    font-family: 'Droid Serif', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 1px;
+    width: 90%;
+    width: 500px;
+    margin-top: 10px; /* Add margin to space the card from the title */
+}
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Reduced gap between left and right sections */
+    margin-top: 20px;
+}
+
+.cards-left, .cards-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Gap between individual cards */
+    justify-content: center;
+}
+
+.cards-left .card, .cards-right .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100px;
+    width: 250px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent black background for cards */
+}
+
+.cards-left .card p.tip, .cards-right .card p.tip {
+    font-size: 1em;
+    font-weight: 600; /* Slightly bolder text for tips */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Text shadow for better visibility */
+}
+
+.cards-left .card p.second-text, .cards-right .card p.second-text {
+    font-size: 0.8em;
+    font-weight: 300; /* Lighter text for the secondary text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Text shadow for better visibility */
+}
+
+.cards-left .card:hover, .cards-right .card:hover {
+    transform: scale(1.1, 1.1);
+    background-color: rgba(59, 130, 246, 0.8); /* Blue overlay on hover */
+}
+
+.cards-left:hover > .card:not(:hover), .cards-right:hover > .card:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
 }
