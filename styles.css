@@ -1,119 +1,188 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Reset and Base Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
-    padding: 30px;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('images/GitHub-headpic.webp') no-repeat center center fixed;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5); /* Reduced opacity of background image */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column; /* Align content in a column */
 }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
+/* Title in the Background Area */
 h1 {
+    font-size: 2.5rem;
+    color: #fff; /* White title */
     text-align: center;
-    margin-bottom: 30px;
-    color: #333;
-    font-size: 36px;
-    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Shadow for better visibility */
+    margin-top: 20px; /* Margin from the top */
+    margin-bottom: 20px; /* Space below the title */
+    padding: 0;
+    width: 100%; /* Ensure title spans across the entire width */
 }
 
+/* Container */
+.container {
+    background: rgba(0, 0, 0, 0.6); /* Slight transparency for contrast */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    margin-top: 30px; /* Add margin to space the card from the title */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.container:hover {
+    transform: scale(1.05); /* Slightly scale up the card on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Darker and more pronounced shadow */
+}
+
+/* Search Container */
 .search-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
-    position: relative;
+    align-items: center;
+    margin: 1.5rem 0;
+    gap: 0.5rem;
+    transition: all 0.3s ease; /* Smooth transition */
 }
 
-input {
-    padding: 15px;
-    width: 60%;
-    border: 2px solid #007BFF;
-    border-radius: 30px;
-    font-size: 18px;
-    transition: all 0.3s ease;
-    outline: none;
+.search-container:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* Add shadow on hover */
 }
 
-input:focus {
-    border-color: #0056b3;
-    box-shadow: 0 0 5px rgba(0, 91, 179, 0.6);
-}
-
-.search-btn {
-    padding: 15px 25px;
-    margin-left: 15px;
-    background-color: #007BFF;
-    color: white;
-    font-size: 18px;
+/* Input Field */
+.search-container input {
+    width: 70%;
+    padding: 0.75rem;
     border: none;
-    border-radius: 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-container input:focus,
+.search-container input:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); /* Light glow effect */
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* Search Button */
+.search-container .search-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff; /* Blue background for the button */
+    color: #fff;
+    border: none;
+    border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
 }
 
-.search-btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+.search-container .search-btn:hover {
+    background-color: #0056b3; /* Darker blue when hovered */
+    transform: scale(1.05); /* Scale up button slightly */
 }
 
-.search-btn:active {
-    transform: scale(0.98);
+/* Error Message */
+.error {
+    color: #ff4b4b;
+    font-size: 1rem;
+    margin: 1rem 0;
+    display: none;
 }
 
-.profile-section, .repo-section, .commits-section {
-    margin-top: 40px;
+/* Profile Section */
+.profile-section {
+    text-align: left;
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .profile-info {
     display: flex;
+    gap: 1rem;
     align-items: center;
-    margin-top: 20px;
 }
 
 .profile-info img {
     border-radius: 50%;
-    margin-right: 20px;
+    border: 2px solid #ff6f61;
 }
 
 .profile-info p {
-    margin: 10px 0;
-    font-size: 18px;
-    color: #333;
+    margin: 0.5rem 0;
 }
 
-.repo-section ul, .commits-section ul {
-    list-style-type: none;
+/* Repository Section */
+.repo-section {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.repo-section p {
+    margin: 0.5rem 0;
+}
+
+.repo-section ul {
+    list-style: none;
     padding: 0;
+    margin-top: 1rem;
 }
 
-.repo-section li, .commits-section li {
-    background-color: #f8f8f8;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    color: #333;
+.repo-section ul li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
 }
 
-.repo-section h2, .commits-section h2 {
-    margin-bottom: 20px;
-    color: #007BFF;
+/* Commits Section */
+.commits-section {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-.error {
-    color: #e74c3c;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 20px;
+.commits-section ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.commits-section ul li {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-container input {
+        width: 60%;
+    }
+    h1 {
+        font-size: 2rem;
+    }
 }
