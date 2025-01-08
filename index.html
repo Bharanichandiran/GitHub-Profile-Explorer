@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>GitHub Profile Explorer</h1>
+        <div class="search-container">
+            <input type="text" id="githubLink" placeholder="Enter GitHub Profile URL" />
+            <button onclick="fetchProfileData()" class="search-btn">Search</button>
+        </div>
+
+        <div id="error" class="error"></div>
+
+        <!-- Profile Details Section -->
+        <div id="profileDetails" class="profile-section" style="display: none;">
+            <h2>Profile Details</h2>
+            <div class="profile-info">
+                <img id="avatar" src="" alt="Profile Avatar" width="100">
+                <div id="profileData">
+                    <p><strong>Name:</strong> <span id="name"></span></p>
+                    <p><strong>Bio:</strong> <span id="bio"></span></p>
+                    <p><strong>Location:</strong> <span id="location"></span></p>
+                    <p><strong>Followers:</strong> <span id="followers"></span></p>
+                    <p><strong>Following:</strong> <span id="following"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repositories Section -->
+        <div id="repositories" class="repo-section" style="display: none;">
+            <h2>Repositories</h2>
+            <p><strong>Public Repositories:</strong> <span id="publicReposCount"></span></p>
+            <p><strong>Private Repositories:</strong> <span id="privateReposCount"></span></p>
+            <ul id="repoList"></ul>
+        </div>
+
+        <!-- Commits Section -->
+        <div id="commits" class="commits-section" style="display: none;">
+            <h2>Recent Commits</h2>
+            <ul id="commitList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
